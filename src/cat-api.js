@@ -4,12 +4,12 @@ axios.defaults.headers.common['x-api-key'] =
   'live_Ns8MJAPdlSbske2raA6HrsJqzB8YWgp8l4sD8eztGK72S8RN63w4n1zMGSmXR5c3';
 
 export function fetchBreeds() {
-  return axios.get('https://api.thecatapi.com/v1/breeds').then(response => {
-    if (response.status !== 200) {
-      throw new Error('Error fetching breeds');
-    }
-    return response.json();
-  });
+  return axios
+    .get('https://api.thecatapi.com/v1/breeds')
+    .then(response => response.data)
+    .catch(error => {
+      throw error;
+    });
 }
 
 export function fetchCatByBreed(breedId) {
