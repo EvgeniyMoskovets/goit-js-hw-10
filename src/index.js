@@ -16,7 +16,7 @@ function onFetchError(error) {
   loader.classList.replace('loader', 'is-hidden');
   breedSelect.classList.remove('is-hidden');
   Notiflix.Notify.failure(
-    'Oops! Something went wrong. Please try again later.'
+    'Oops! Something went wrong! Try reloading the page!'
   );
 }
 
